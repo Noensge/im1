@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Über mich – Volleyball</title>
+    <meta name="description" content="Alles rund um den Volleyball – von Noé Birchmeier.">
+
+    <script>
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="logo" href="index.html" aria-label="Volleyball – zur Startseite">
+            <span class="logo__dots" aria-hidden="true"></span>
+            <span class="logo__text">Volleyball</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hauptmenü">
+            <ul>
+                <li><a href="index.html" class="main-nav__link">Start</a></li>
+                <li><a href="ueber-mich.html" class="main-nav__link is-active" aria-current="page">Über mich</a></li>
+                <li><a href="kontakt.html" class="main-nav__link">Kontakt</a></li>
+                <li><a href="impressum.html" class="main-nav__link">Impressum</a></li>
+            </ul>
+        </nav>
+
+        <button type="button" class="theme-toggle" aria-label="Zwischen hell und dunkel wechseln">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.25a6.75 6.75 0 0 1 0 13.5z" fill="currentColor"/></svg>
+        </button>
+    </div>
+</header>
+
+<main id="inhalt">
+
+    <section class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+            <h1 id="page-title" class="page-hero__title">Über <span class="accent">mich</span></h1>
+            <p class="page-hero__lead">
+                Ich bin 21 Jahre alt, und der Volleyball hat mich mehr als die Hälfte meines Lebens begleitet.
+                2026 habe ich mit dem Spielen aufgehört. Geblieben sind die Erfahrung, die Erinnerungen und die Freude am Coachen.
+            </p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <ol class="timeline">
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2013</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">Start in der U11</h3>
+                        <p class="timeline__text">Der Anfang von allem. Von hier aus habe ich mich Stufe für Stufe hochgesteigert.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2020</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">Aufstieg in die U23</h3>
+                        <p class="timeline__text">Ich durfte schon in der U23 mitspielen.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2021</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">U18-Schweizermeisterschaft</h3>
+                        <p class="timeline__text">Mit der U18 war ich an den Schweizermeisterschaften dabei.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2021</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">1418 Coach</h3>
+                        <p class="timeline__text">Ausbildung zum 1418 Coach, mein erster Schritt an die Seitenlinie.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2023</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">J+S-Trainerin</h3>
+                        <p class="timeline__text">J+S-Ausbildung zur Volleyballtrainerin. Ich habe die U11 gecoacht und ab 2023 auch die U20.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2024</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">Damen 3. Liga</h3>
+                        <p class="timeline__text">Seit 2024 habe ich in der Damen 3. Liga gespielt.</p>
+                    </div>
+                </li>
+                <li class="timeline__item">
+                    <img class="timeline__icon" src="assets/img/timeline-ball.svg" width="28" height="28" alt="">
+                    <span class="timeline__year">2026</span>
+                    <div class="card timeline__card">
+                        <h3 class="timeline__title">Abschied vom Spielfeld</h3>
+                        <p class="timeline__text">2026 habe ich mit dem Spielen aufgehört.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <span>© 2026 Noé Birchmeier</span>
+        <span class="site-footer__brand">Volleyball</span>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

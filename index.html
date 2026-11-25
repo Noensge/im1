@@ -1,10 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de-CH">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Start – Volleyball</title>
+    <meta name="description" content="Alles rund um den Volleyball – von Noé Birchmeier.">
+
+    <!-- Hell/Dunkel so früh wie möglich setzen, damit nichts aufblitzt -->
+    <script>
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="logo" href="index.html" aria-label="Volleyball – zur Startseite">
+            <span class="logo__dots" aria-hidden="true"></span>
+            <span class="logo__text">Volleyball</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hauptmenü">
+            <ul>
+                <li><a href="index.html" class="main-nav__link is-active" aria-current="page">Start</a></li>
+                <li><a href="ueber-mich.html" class="main-nav__link">Über mich</a></li>
+                <li><a href="kontakt.html" class="main-nav__link">Kontakt</a></li>
+                <li><a href="impressum.html" class="main-nav__link">Impressum</a></li>
+            </ul>
+        </nav>
+
+        <button type="button" class="theme-toggle" aria-label="Zwischen hell und dunkel wechseln">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.25a6.75 6.75 0 0 1 0 13.5z" fill="currentColor"/></svg>
+        </button>
+    </div>
+</header>
+
+<main id="inhalt">
+
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+            <h1 id="hero-title" class="hero__title">Der <span class="accent">Volleyball</span></h1>
+
+            <div class="ball-stage">
+                <!-- Volleyball aus Figma: Streifen + Schriftzug drehen sich, Glanz bleibt stehen -->
+                <svg class="ball" width="450" height="450" viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ball-title">
+                    <title id="ball-title">Sich drehender Volleyball in Gelb und Blau</title>
+                    <defs>
+                        <mask id="ball-mask" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9" y="9" width="432" height="433">
+                            <path d="M225 441C344.294 441 441 344.294 441 225C441 105.706 344.294 9 225 9C105.706 9 9 105.706 9 225C9 344.294 105.706 441 225 441Z" fill="white"/>
+                        </mask>
+                        <linearGradient id="ball-base" x1="0" y1="0" x2="450" y2="450" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFCB3D"/>
+                            <stop offset="0.55" stop-color="#F8B800"/>
+                            <stop offset="1" stop-color="#D49500"/>
+                        </linearGradient>
+                        <linearGradient id="ball-band-1" x1="-22.5" y1="105.75" x2="61.5271" y2="381.66" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2A4BB0"/>
+                            <stop offset="1" stop-color="#002060"/>
+                        </linearGradient>
+                        <linearGradient id="ball-band-2" x1="452.023" y1="70.2838" x2="171.065" y2="5.09843" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2A4BB0"/>
+                            <stop offset="1" stop-color="#002060"/>
+                        </linearGradient>
+                        <linearGradient id="ball-band-3" x1="245.477" y1="498.966" x2="442.408" y2="288.242" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2A4BB0"/>
+                            <stop offset="1" stop-color="#002060"/>
+                        </linearGradient>
+                        <radialGradient id="ball-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160.2 138.6) scale(367.2)">
+                            <stop stop-color="white" stop-opacity="0.55"/>
+                            <stop offset="0.35" stop-color="white" stop-opacity="0"/>
+                            <stop offset="0.75" stop-opacity="0.12"/>
+                            <stop offset="1" stop-opacity="0.5"/>
+                        </radialGradient>
+                    </defs>
+
+                    <g mask="url(#ball-mask)">
+                        <path d="M450 0H0V450H450V0Z" fill="url(#ball-base)"/>
+
+                        <g class="ball-spin">
+                            <path d="M-22.5 162C142.5 87 307.5 87 472.5 162V256.5C307.5 181.5 142.5 181.5 -22.5 256.5V162Z" fill="url(#ball-band-1)" stroke-width="2.7" stroke="#F8B800"/>
+                            <path d="M403.31 42.1588C385.761 222.553 303.261 365.447 155.81 470.841L73.9702 423.591C221.422 318.197 303.922 175.303 321.47 -5.09119L403.31 42.1588Z" fill="url(#ball-band-2)" stroke-width="2.7" stroke="#F8B800"/>
+                            <path d="M294.19 470.841C146.739 365.447 64.2386 222.553 46.6905 42.1588L128.53 -5.09117C146.078 175.303 228.578 318.197 376.03 423.591L294.19 470.841Z" fill="url(#ball-band-3)" stroke-width="2.7" stroke="#F8B800"/>
+                            <!-- Schriftzug MIKASA (3×, als Pfade) -->
+                            <path d="M156.423 154.925L152.733 134.315L158.961 133.2L165.218 146.589L166.398 131.868L172.64 130.751L176.331 151.361L172.464 152.053L169.56 135.829L168.373 152.785L164.367 153.503L157.385 138.009L160.29 154.233L156.423 154.925ZM184.777 149.98L182.427 129.174L186.628 128.7L188.978 149.505L184.777 149.98ZM197.532 148.669L196.416 127.761L200.638 127.536L201.133 136.82L209.166 127.08L214.842 126.777L207.405 135.341L216.387 147.662L210.924 147.954L204.653 138.449L201.417 142.126L201.754 148.444L197.532 148.669ZM241.945 147.992L237.348 147.867L235.65 143.063L227.284 142.834L225.427 147.541L220.944 147.419L229.667 126.712L234.136 126.833L241.945 147.992ZM234.39 139.499L231.718 131.654L228.679 139.343L234.39 139.499ZM248.339 141.456L252.471 141.496C252.571 142.895 252.96 143.956 253.639 144.68C254.328 145.404 255.311 145.835 256.59 145.972C257.943 146.116 258.991 145.941 259.734 145.446C260.487 144.942 260.904 144.307 260.986 143.54C261.039 143.047 260.936 142.615 260.679 142.243C260.433 141.862 259.963 141.506 259.271 141.173C258.797 140.95 257.707 140.528 256.002 139.905C253.809 139.106 252.301 138.25 251.479 137.339C250.323 136.057 249.833 134.592 250.009 132.945C250.122 131.885 250.526 130.927 251.221 130.072C251.926 129.209 252.868 128.596 254.046 128.234C255.233 127.872 256.627 127.777 258.227 127.948C260.84 128.227 262.744 129.01 263.937 130.296C265.14 131.583 265.673 133.186 265.535 135.106L261.312 134.842C261.246 133.752 260.94 132.944 260.393 132.417C259.856 131.88 258.997 131.549 257.813 131.423C256.592 131.292 255.609 131.441 254.864 131.869C254.385 132.143 254.116 132.55 254.058 133.09C254.006 133.582 254.169 134.026 254.548 134.421C255.031 134.922 256.269 135.524 258.263 136.225C260.256 136.926 261.712 137.589 262.632 138.214C263.562 138.831 264.254 139.618 264.707 140.576C265.17 141.526 265.332 142.658 265.191 143.974C265.064 145.167 264.613 146.249 263.839 147.22C263.065 148.191 262.045 148.867 260.778 149.249C259.513 149.621 257.976 149.711 256.168 149.517C253.536 149.236 251.579 148.414 250.298 147.052C249.018 145.68 248.365 143.815 248.339 141.456ZM291.119 154.331L286.591 153.529L285.62 148.527L277.379 147.068L274.848 151.45L270.432 150.667L282.114 131.473L286.515 132.252L291.119 154.331ZM284.899 144.817L283.413 136.663L279.274 143.821L284.899 144.817Z" fill="#F8B800"/>
+                            <path d="M319.975 200.649L339.669 207.758L337.52 213.709L322.797 212.433L334.955 220.816L332.802 226.78L313.108 219.671L314.442 215.977L329.944 221.573L315.853 212.068L317.235 208.239L334.144 209.939L318.641 204.343L319.975 200.649ZM310.081 227.676L329.274 236.044L327.584 239.919L308.391 231.552L310.081 227.676ZM304.838 239.378L323.503 248.865L321.588 252.634L313.299 248.421L317.718 260.248L315.142 265.315L311.444 254.592L296.283 256.21L298.761 251.333L310.129 250.655L308.563 246.014L302.923 243.147L304.838 239.378ZM283.218 278.179L285.625 274.26L290.634 275.192L295.015 268.061L291.868 264.099L294.215 260.278L307.786 278.186L305.447 281.995L283.218 278.179ZM294.35 275.883L302.481 277.491L297.341 271.015L294.35 275.883ZM285.681 286.984L283.581 290.543C282.319 289.93 281.206 289.737 280.239 289.963C279.267 290.197 278.403 290.833 277.645 291.872C276.843 292.972 276.471 293.967 276.529 294.858C276.589 295.762 276.93 296.441 277.553 296.895C277.953 297.187 278.379 297.314 278.83 297.278C279.283 297.255 279.826 297.026 280.46 296.593C280.89 296.294 281.801 295.562 283.193 294.397C284.982 292.897 286.477 292.018 287.677 291.762C289.365 291.402 290.878 291.71 292.217 292.687C293.079 293.315 293.706 294.143 294.099 295.172C294.494 296.214 294.554 297.336 294.279 298.538C293.998 299.747 293.383 301.002 292.435 302.302C290.887 304.426 289.258 305.683 287.547 306.073C285.831 306.472 284.176 306.131 282.583 305.052L284.923 301.526C285.899 302.014 286.752 302.153 287.483 301.943C288.215 301.747 288.932 301.168 289.633 300.206C290.357 299.213 290.72 298.288 290.721 297.429C290.723 296.877 290.505 296.44 290.067 296.121C289.667 295.829 289.201 295.749 288.669 295.88C287.994 296.047 286.854 296.818 285.25 298.194C283.646 299.57 282.343 300.5 281.342 300.983C280.343 301.481 279.316 301.686 278.259 301.599C277.205 301.526 276.144 301.099 275.074 300.32C274.105 299.613 273.393 298.682 272.94 297.526C272.486 296.37 272.41 295.149 272.713 293.861C273.023 292.579 273.714 291.203 274.786 289.734C276.345 287.595 278.035 286.311 279.856 285.883C281.684 285.46 283.626 285.827 285.681 286.984ZM253.141 317.596L256.1 314.075L260.917 315.735L266.301 309.328L263.772 304.945L266.657 301.512L277.44 321.226L274.564 324.648L253.141 317.596ZM264.49 316.966L272.294 319.756L268.166 312.593L264.49 316.966Z" fill="#F8B800"/>
+                            <path d="M198.602 319.426L182.598 332.927L178.518 328.091L186.985 315.978L173.647 322.316L169.558 317.469L185.561 303.968L188.094 306.97L175.496 317.598L190.774 310.147L193.398 313.258L183.471 327.051L196.069 316.424L198.602 319.426ZM180.142 297.344L163.299 309.782L160.788 306.381L177.631 293.943L180.142 297.344ZM172.629 286.953L155.081 298.373L152.775 294.83L160.568 289.759L148.116 287.672L145.016 282.908L156.151 285.067L162.33 271.128L165.314 275.712L160.218 285.896L165.021 286.861L170.323 283.409L172.629 286.953ZM149.837 248.829L152.027 252.873L148.715 256.745L152.701 264.105L157.706 263.359L159.841 267.303L137.546 270.102L135.418 266.171L149.837 248.829ZM146.259 259.618L140.801 265.855L148.98 264.642L146.259 259.618ZM140.98 246.559L138.948 242.961C140.109 242.175 140.834 241.307 141.121 240.357C141.404 239.399 141.286 238.332 140.765 237.156C140.213 235.912 139.537 235.092 138.737 234.696C137.924 234.296 137.166 234.252 136.46 234.565C136.008 234.766 135.685 235.07 135.491 235.479C135.284 235.883 135.21 236.468 135.269 237.233C135.313 237.756 135.491 238.91 135.804 240.698C136.209 242.998 136.222 244.731 135.844 245.899C135.312 247.541 134.288 248.697 132.773 249.369C131.799 249.801 130.767 249.93 129.68 249.755C128.58 249.576 127.578 249.067 126.675 248.228C125.768 247.38 124.989 246.221 124.337 244.75C123.272 242.347 122.998 240.308 123.515 238.631C124.028 236.945 125.151 235.682 126.882 234.842L128.765 238.632C127.854 239.233 127.307 239.903 127.124 240.64C126.928 241.373 127.071 242.283 127.553 243.371C128.051 244.494 128.671 245.271 129.414 245.702C129.892 245.98 130.378 246.009 130.875 245.789C131.327 245.588 131.63 245.225 131.782 244.7C131.975 244.031 131.877 242.658 131.488 240.581C131.098 238.504 130.944 236.911 131.025 235.802C131.094 234.688 131.43 233.696 132.034 232.825C132.624 231.948 133.524 231.242 134.734 230.706C135.831 230.22 136.993 230.069 138.221 230.254C139.449 230.439 140.544 230.984 141.508 231.89C142.463 232.8 143.309 234.086 144.046 235.749C145.119 238.169 145.386 240.274 144.846 242.065C144.298 243.86 143.009 245.358 140.98 246.559ZM130.739 203.073L132.309 207.396L128.463 210.737L131.319 218.604L136.379 218.605L137.91 222.82L115.446 222.301L113.92 218.1L130.739 203.073ZM125.61 213.217L119.292 218.58L127.56 218.586L125.61 213.217Z" fill="#F8B800"/>
+                        </g>
+
+                        <path d="M225 441C344.294 441 441 344.294 441 225C441 105.706 344.294 9 225 9C105.706 9 9 105.706 9 225C9 344.294 105.706 441 225 441Z" fill="url(#ball-shine)"/>
+                    </g>
+                    <path d="M441 225C441 344.294 344.294 441 225 441C105.706 441 9 344.294 9 225C9 105.706 105.706 9 225 9C344.294 9 441 105.706 441 225Z" stroke-width="3.375" stroke="#002060"/>
+                </svg>
+                <span class="ball-shadow" aria-hidden="true"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="milestones" aria-label="Geschichte">
+        <div class="container milestones__grid">
+            <article class="milestone">
+                <p class="eyebrow">Erfunden</p>
+                <h3 class="milestone__year">1895</h3>
+                <p class="milestone__text">William G. Morgan erfindet das Spiel in Holyoke (USA). Zuerst heisst es «Mintonette».</p>
+            </article>
+            <article class="milestone">
+                <p class="eyebrow">Weltverband</p>
+                <h3 class="milestone__year">1947</h3>
+                <p class="milestone__text">Der Weltverband FIVB wird in Paris gegründet.</p>
+            </article>
+            <article class="milestone">
+                <p class="eyebrow">Olympisch</p>
+                <h3 class="milestone__year">1964</h3>
+                <p class="milestone__text">Volleyball ist bei den Spielen in Tokio zum ersten Mal olympisch.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="facts" aria-labelledby="facts-title">
+        <div class="container">
+            <h2 id="facts-title" class="section-title">Eckdaten</h2>
+            <p class="section-lead">Die wichtigsten Masse rund um Ball, Feld und Netz.</p>
+
+            <div class="facts__grid">
+                <article class="fact-card fact-card--navy">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Ball</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">65–67 cm</p>
+                    <p class="fact-card__text">Umfang des Balls</p>
+                </article>
+
+                <article class="fact-card fact-card--blue">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Ball</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">260–280g</p>
+                    <p class="fact-card__text">Gewicht des Balls</p>
+                </article>
+
+                <article class="fact-card fact-card--light">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Feld</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">18 × 9 m</p>
+                    <p class="fact-card__text">Grösse des Spielfelds</p>
+                </article>
+
+                <article class="fact-card fact-card--light">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Netz</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">2,43 / 2,24 m</p>
+                    <p class="fact-card__text">Netzhöhe Männer / Frauen</p>
+                </article>
+
+                <article class="fact-card fact-card--navy">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Team</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">6 gegen 6</p>
+                    <p class="fact-card__text">Spielerinnen und Spieler auf dem Feld</p>
+                </article>
+
+                <article class="fact-card fact-card--blue">
+                    <div class="fact-card__top">
+                        <span class="eyebrow">Ball</span>
+                        <span class="fact-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="fact-card__value">18 Panels</p>
+                    <p class="fact-card__text">Aus 18 Teilen genäht oder geklebt</p>
+                </article>
+            </div>
+
+            <a class="btn btn--primary" href="ueber-mich.html">Mehr über mich</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <span>© 2026 Noé Birchmeier</span>
+        <span class="site-footer__brand">Volleyball</span>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>
